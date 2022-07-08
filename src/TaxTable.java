@@ -30,7 +30,7 @@ public class TaxTable {
                     }
                 }
             }
-            TaxPayable =TaxPayable - PrimaryRebate - MedicalCredits;
+            TaxPayable = TaxPayable - PrimaryRebate - MedicalCredits;
             return TaxPayable;
     }
 
