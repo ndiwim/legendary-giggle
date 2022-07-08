@@ -28,7 +28,10 @@ public class TaxPayer {
         }
         //Add code for Capital Gains Here
         return TaxableIncome;
+        //no
     }
+
+
 
     public double CalculateTaxDeductible(){
         double TaxDeductible = 0;
