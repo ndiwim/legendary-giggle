@@ -78,7 +78,7 @@ public class TaxCalculator {
             NetTaxPayable -= TertiaryRebate;
         }
 
-
+        System.out.println("Your Nett Tax Payable is R" + NetTaxPayable);
 
     }
 
