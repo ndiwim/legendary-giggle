@@ -8,6 +8,7 @@ public class TaxPayer {
     double TaxPayerBonuses;
     double TaxPayerInterestReceived;
     double TaxPayerDividends;
+    double TaxPayerTotalCapitalGain;
     double TaxPayerRetirementFunding;
     double TaxPayerTravelAllowance;
 
@@ -26,7 +27,10 @@ public class TaxPayer {
         if (TaxPayerInterestReceived >= 23800){
             TaxableIncome += TaxPayerInterestReceived - 23800;
         }
-        //Add code for Capital Gains Here
+
+        if (TaxPayerTotalCapitalGain > 40000){
+            TaxableIncome += (TaxPayerTotalCapitalGain - 40000) * 0.4;
+        }
         return TaxableIncome;
     }
 
@@ -34,8 +38,34 @@ public class TaxPayer {
         double TaxDeductible = 0;
         TaxDeductible += TaxPayerTravelAllowance;
         //Add code for Retirement Funding here
+        double TaxPayerRetirementMaxAllowed = 0;
+
+        if (0.275 * (TaxPayerSalary + TaxPayerBonuses) > 350000.00){
+            TaxPayerRetirementMaxAllowed = 350000.00;
+        }
+        else {
+            TaxPayerRetirementMaxAllowed = 0.275 * (TaxPayerSalary + TaxPayerBonuses);
+        }
+
+        if (TaxPayerRetirementFunding < TaxPayerRetirementMaxAllowed){
+            TaxDeductible += TaxPayerRetirementFunding;
+        }
+        else {
+            TaxDeductible += TaxPayerRetirementMaxAllowed;
+        }
 
         return TaxDeductible;
+    }
+
+    public double CalculateNettTaxableIncome(){
+        return CalculateTaxableIncome() - CalculateTaxDeductible();
+    }
+
+    public double getTaxPayerTotalCapitalGain() {
+        return TaxPayerTotalCapitalGain;
+    }
+    public void setTaxPayerTotalCapitalGain(double taxPayerTotalCapitalGain) {
+        TaxPayerTotalCapitalGain = taxPayerTotalCapitalGain;
     }
 
     public double getTaxPayerSalary() {
