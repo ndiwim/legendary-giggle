@@ -20,6 +20,8 @@ public class TaxCalculator {
         System.out.println("Enter your age.");
         int TaxPayerAge = Integer.parseInt(myScanner.nextLine());
 
+        //helloeword
+
         TaxPayer TP1 = new TaxPayer(TaxPayerNumber, TaxPayerName, TaxPayerSurname, TaxPayerAge);
 
         System.out.println("Enter your salary.");
