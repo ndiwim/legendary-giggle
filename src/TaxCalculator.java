@@ -14,19 +14,20 @@ public class TaxCalculator {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Enter your tax payer number.");
         int TaxPayerNumber = Integer.parseInt(myScanner.nextLine());
-
+        //take in details of the tax player (not necessary for phase1)
         System.out.println("Enter your name.");
         String TaxPayerName = myScanner.nextLine();
 
         System.out.println("Enter your surname.");
         String TaxPayerSurname = myScanner.nextLine();
 
-        System.out.println("Enter your age.");
+        System.out.println("Enter your age."); //for Rebate purposes
         int TaxPayerAge = Integer.parseInt(myScanner.nextLine());
 
-        //Create a TaxPayer Obeject
+        //Create a TaxPayer Object
         TaxPayer TP1 = new TaxPayer(TaxPayerNumber, TaxPayerName, TaxPayerSurname, TaxPayerAge);
 
+        //take in info about taxpayer's income and set them in the TaxPayer method
         System.out.println("Enter your salary.");
         double TaxPayerSalary = Double.parseDouble(myScanner.nextLine());
         TP1.setTaxPayerSalary(TaxPayerSalary);
@@ -62,21 +63,24 @@ public class TaxCalculator {
         TaxTable t2021_2022 = new TaxTable(TaxPayerNetTaxableIncome);
         NetTaxPayable = t2021_2022.CalculateTaxPayable();
 
-        //Deduct Medical Credits
-        NetTaxPayable -= MedicalCredits;
+        //PrimaryRebate and MedicalCredits accounted for in Tax Table
+        //Secondary and Tertiary Rebate not applicable in phase1
+        /*//Deduct Medical Credits
+         -= MedicalCredits;
 
-        //Deduct Primary Rebat
+        //Deduct Primary Rebate
         NetTaxPayable -= PrimaryRebate;
 
-        //Deduct Secondary Rebat
+        //Deduct Secondary Rebate
         if (TP1.TaxPayerAge >= 65) {
             NetTaxPayable -= SecondaryRebate;
         }
 
-        //Deduct Secondary Rebat
+        //Deduct Tertiary Rebate
         if (TP1.TaxPayerAge <= 65) {
             NetTaxPayable -= TertiaryRebate;
         }
+        */
 
         System.out.println("Your Nett Tax Payable is R" + NetTaxPayable);
 
