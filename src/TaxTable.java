@@ -9,7 +9,7 @@ public class TaxTable {
         TaxableIncome = taxableIncome;
     }
     public double CalculateTaxPayable() {
-            if (TaxableIncome > 0.00) {
+            if (TaxableIncome >= 0.00) {
                 TaxPayable += (216200.00 - 0.00) * 0.18;
                 if (TaxableIncome > 216200.00) {
                     TaxPayable += (337800.00 - 216200.00) * 0.26;
@@ -30,7 +30,7 @@ public class TaxTable {
                     }
                 }
             }
-            TaxPayable =TaxPayable - PrimaryRebate - MedicalCredits;
+            TaxPayable = TaxPayable - PrimaryRebate - MedicalCredits;
             return TaxPayable;
     }
 
