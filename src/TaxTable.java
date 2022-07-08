@@ -2,6 +2,8 @@ public class TaxTable {
     //implements the tax table to calculate tax payable
     double TaxableIncome;
     double TaxPayable = 0;
+    double PrimaryRebate = 15714;
+    double MedicalCredits = 12000;
 
     public TaxTable(double taxableIncome) {
         TaxableIncome = taxableIncome;
@@ -28,6 +30,7 @@ public class TaxTable {
                     }
                 }
             }
+            TaxPayable =TaxPayable - PrimaryRebate - MedicalCredits;
             return TaxPayable;
     }
 
