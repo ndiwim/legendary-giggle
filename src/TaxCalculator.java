@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class TaxCalculator {
 
-    static final double InterestReceivedExemption = 23800.00;
+    public static final double INTEREST_RECEIVED_Exemption = 23800.00;
     static final double CapitalGainsExemption = 40000.00;
     static final double CapitalGainsIncludedRate = 0.40;
     static final double MedicalCredits = 12000;

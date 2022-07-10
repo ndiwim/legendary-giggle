@@ -1,7 +1,7 @@
 
 public class TaxPayer {
-    int TaxPayerNumber;
-    String TaxPayerName;
+    private int TaxPayerNumber;
+    private String TaxPayerName;
     String TaxPayerSurname;
     int TaxPayerAge;
     double TaxPayerSalary;
@@ -12,11 +12,11 @@ public class TaxPayer {
     double TaxPayerRetirementFunding;
     double TaxPayerTravelAllowance;
 
-    public TaxPayer(int taxPayerNumber, String TaxPayerName, String TaxPayerSurname, int TaxPayerAge) {
-        TaxPayerNumber = taxPayerNumber;
-        TaxPayerName = TaxPayerName;
-        TaxPayerSurname = TaxPayerSurname;
-        TaxPayerAge = TaxPayerAge;
+    public TaxPayer(int TaxPayerNumber, String TaxPayerName, String TaxPayerSurname, int TaxPayerAge) {
+        this.TaxPayerNumber = TaxPayerNumber;
+        this.TaxPayerName = TaxPayerName;
+        this.TaxPayerSurname = TaxPayerSurname;
+        this.TaxPayerAge = TaxPayerAge;
     }
 
     public double CalculateTaxableIncome(){
