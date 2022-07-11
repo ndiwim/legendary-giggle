@@ -27,10 +27,10 @@ public class TaxPayer {
         if (TaxPayerInterestReceived >= 23800){
             TaxableIncome += TaxPayerInterestReceived - 23800;
         }
-
         if (TaxPayerTotalCapitalGain > 40000){
             TaxableIncome += (TaxPayerTotalCapitalGain - 40000) * 0.4;
         }
+        System.out.println("Your taxable income is:" + TaxableIncome);
         return TaxableIncome;
         //no
     }
@@ -56,7 +56,7 @@ public class TaxPayer {
         else {
             TaxDeductible += TaxPayerRetirementMaxAllowed;
         }
-
+        System.out.println("Your tax deductable is:" + TaxDeductible);
         return TaxDeductible;
     }
 
@@ -66,6 +66,7 @@ public class TaxPayer {
 
     public double getTaxPayerTotalCapitalGain() {
         return TaxPayerTotalCapitalGain;
+
     }
     public void setTaxPayerTotalCapitalGain(double taxPayerTotalCapitalGain) {
         TaxPayerTotalCapitalGain = taxPayerTotalCapitalGain;

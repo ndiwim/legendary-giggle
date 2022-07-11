@@ -70,7 +70,7 @@ public class TaxCalculator {
 
         //Deduct Primary Rebate
         NetTaxPayable -= PrimaryRebate;
-
+        */
         //Deduct Secondary Rebate
         if (TP1.TaxPayerAge >= 65) {
             NetTaxPayable -= SecondaryRebate;
@@ -80,7 +80,7 @@ public class TaxCalculator {
         if (TP1.TaxPayerAge <= 65) {
             NetTaxPayable -= TertiaryRebate;
         }
-        */
+
 
         System.out.println("Your Nett Tax Payable is R" + NetTaxPayable);
 
