@@ -38,11 +38,19 @@ public class TaxPayer {
         if (TaxPayerInterestReceived >= INTEREST_RECEIVED_EXEMPTION){
             taxableIncome += TaxPayerInterestReceived - INTEREST_RECEIVED_EXEMPTION;
         }
+<<<<<<< HEAD
+        if (TaxPayerTotalCapitalGain > 40000){
+            TaxableIncome += (TaxPayerTotalCapitalGain - 40000) * 0.4;
+        }
+        System.out.println("Your taxable income is:" + TaxableIncome);
+        return TaxableIncome;
+=======
 
         if (TaxPayerTotalCapitalGain > CAPITAL_GAINS_EXEMPTION){
             taxableIncome += (TaxPayerTotalCapitalGain - CAPITAL_GAINS_EXEMPTION) * CAPITAL_GAINS_INCLUDED_RATE;
         }
         return taxableIncome;
+>>>>>>> main
         //no
     }
 
@@ -67,7 +75,7 @@ public class TaxPayer {
         else {
             TaxDeductible += TaxPayerRetirementMaxAllowed;
         }
-
+        System.out.println("Your tax deductable is:" + TaxDeductible);
         return TaxDeductible;
     }
 
@@ -168,6 +176,7 @@ public class TaxPayer {
 
     public double getTaxPayerTotalCapitalGain() {
         return TaxPayerTotalCapitalGain;
+
     }
     public void setTaxPayerTotalCapitalGain(double taxPayerTotalCapitalGain) {
         TaxPayerTotalCapitalGain = taxPayerTotalCapitalGain;
