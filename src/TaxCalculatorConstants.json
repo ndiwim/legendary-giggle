@@ -1,0 +1,37 @@
+{
+        "INTEREST_RECEIVED_EXEMPTION" : 23800.00,
+        "CAPITAL_GAINS_EXEMPTION" : 40000.00,
+        "CAPITAL_GAINS_INCLUDED_RATE" : 0.40,
+        "MEDICAL_CREDITS" : 12000,
+        "PRIMARY_REBATE" : 15714,
+        "SECONDARY_REBATE" : 8613,
+        "TERTIARY_REBATE" : 2871,
+
+        "FIRST_BAND_LOW" : 0.00,
+        "FIRST_BAND_HIGH" : 216200.00,
+        "FIRST_BAND_PERCENTAGE" : 0.18,
+
+        "SECOND_BAND_LOW" : 216201.00,
+        "SECOND_BAND_HIGH" : 337800.00,
+        "SECOND_BAND_PERCENTAGE" : 0.26,
+
+        "THIRD_BAND_LOW" : 337801.00,
+        "THIRD_BAND_HIGH" : 467500.00,
+        "THIRD_BAND_PERCENTAGE" : 0.31,
+
+        "FOURTH_BAND_LOW" : 467501.00,
+        "FOURTH_BAND_HIGH" : 613600.00,
+        "FOURTH_BAND_PERCENTAGE" : 0.36,
+
+        "FIFTH_BAND_LOW" : 613601.00,
+        "FIFTH_BAND_HIGH" : 782200.00,
+        "FIFTH_BAND_PERCENTAGE" : 0.39,
+
+        "SIXTH_BAND_LOW" : 782201.00,
+            private static double SIXTH_BAND_HIGH;
+            private static double SIXTH_BAND_PERCENTAGE;
+
+            private static double SEVENTH_BAND_LOW;
+            private static double SEVENTH_BAND_HIGH;
+            private static double SEVENTH_BAND_PERCENTAGE;
+}

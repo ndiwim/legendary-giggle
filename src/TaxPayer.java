@@ -1,14 +1,68 @@
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class TaxPayer {
     //constants
-    private static final double INTEREST_RECEIVED_EXEMPTION = 23800.00;
-    private static final double CAPITAL_GAINS_EXEMPTION = 40000.00;
-    private static final double CAPITAL_GAINS_INCLUDED_RATE = 0.40;
-    private static final double MEDICAL_CREDITS = 12000;
-    private static final double PRIMARY_REBATE = 15714;
-    private static final double SECONDARY_REBATE = 8613;
-    private static final double TERTIARY_REBATE = 2871;
+    private static double INTEREST_RECEIVED_EXEMPTION;
+    private static double CAPITAL_GAINS_EXEMPTION;
+    private static double CAPITAL_GAINS_INCLUDED_RATE;
+    private static double MEDICAL_CREDITS;
+    private static double PRIMARY_REBATE;
+    private static double SECONDARY_REBATE;
+    private static double TERTIARY_REBATE;
+    //bands
+    private static double FIRST_BAND_LOW;
+    private static double FIRST_BAND_HIGH;
+    private static double FIRST_BAND_PERCENTAGE;
+    private static double SECOND_BAND_LOW;
+    private static double SECOND_BAND_HIGH;
+    private static double SECOND_BAND_PERCENTAGE;
+    private static double THIRD_BAND_LOW;
+    private static double THIRD_BAND_HIGH;
+    private static double THIRD_BAND_PERCENTAGE;
+    private static double FOURTH_BAND_LOW;
+    private static double FOURTH_BAND_HIGH;
+    private static double FOURTH_BAND_PERCENTAGE;
+    private static double FIFTH_BAND_LOW;
+    private static double FIFTH_BAND_HIGH;
+    private static double FIFTH_BAND_PERCENTAGE;
+    private static double SIXTH_BAND_LOW;
+    private static double SIXTH_BAND_HIGH;
+    private static double SIXTH_BAND_PERCENTAGE;
+    private static double SEVENTH_BAND_LOW;
+    private static double SEVENTH_BAND_HIGH;
+    private static double SEVENTH_BAND_PERCENTAGE;
 
+
+
+
+    JSONParser parser = new JSONParser();
+    Object object;
+
+    {
+        try {
+            object = parser.parse(new FileReader("TaxCalculatorConstants.json"));
+            JSONObject jsonObject = (JSONObject) object;
+
+            INTEREST_RECEIVED_EXEMPTION = (double) jsonObject.get("INTEREST_RECEIVED_EXEMPTION");
+            CAPITAL_GAINS_EXEMPTION = (double) jsonObject.get("CAPITAL_GAINS_EXEMPTION");
+            CAPITAL_GAINS_INCLUDED_RATE = (double) jsonObject.get("CAPITAL_GAINS_INCLUDED_RATE");
+            MEDICAL_CREDITS = (double) jsonObject.get("MEDICAL_CREDITS");
+            PRIMARY_REBATE = (double) jsonObject.get("PRIMARY_REBATE");
+            SECONDARY_REBATE = (double) jsonObject.get("SECONDARY_REBATE");
+            TERTIARY_REBATE = (double) jsonObject.get("TERTIARY_REBATE");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 
     //Tax Payer Attributes
     private int TaxPayerNumber;
@@ -33,25 +87,22 @@ public class TaxPayer {
     private double calculateTaxableIncome(){
         //calculate the taxable income
         double taxableIncome = 0;
+
         taxableIncome += TaxPayerSalary;
+
         taxableIncome += TaxPayerBonuses;
-        if (TaxPayerInterestReceived >= INTEREST_RECEIVED_EXEMPTION){
+
+        if (TaxPayerInterestReceived > INTEREST_RECEIVED_EXEMPTION){
             taxableIncome += TaxPayerInterestReceived - INTEREST_RECEIVED_EXEMPTION;
         }
-<<<<<<< HEAD
-        if (TaxPayerTotalCapitalGain > 40000){
-            TaxableIncome += (TaxPayerTotalCapitalGain - 40000) * 0.4;
-        }
-        System.out.println("Your taxable income is:" + TaxableIncome);
-        return TaxableIncome;
-=======
 
         if (TaxPayerTotalCapitalGain > CAPITAL_GAINS_EXEMPTION){
             taxableIncome += (TaxPayerTotalCapitalGain - CAPITAL_GAINS_EXEMPTION) * CAPITAL_GAINS_INCLUDED_RATE;
         }
+        System.out.println("Your taxable income is:" + taxableIncome);
         return taxableIncome;
->>>>>>> main
-        //no
+
+
     }
 
 

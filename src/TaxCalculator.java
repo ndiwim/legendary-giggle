@@ -59,14 +59,14 @@ public class TaxCalculator {
 <<<<<<< HEAD
         //PrimaryRebate and MedicalCredits accounted for in Tax Table
         //Secondary and Tertiary Rebate not applicable in phase1
-        /*//Deduct Medical Credits
+        Deduct Medical Credits
          -= MedicalCredits;
 
         //Deduct Primary Rebate
         NetTaxPayable -= PrimaryRebate;
         */
         //Deduct Secondary Rebate
-        if (TP1.TaxPayerAge >= 65) {
+        /*if (TP1.TaxPayerAge >= 65) {
             NetTaxPayable -= SecondaryRebate;
         }
 
@@ -79,7 +79,7 @@ public class TaxCalculator {
          */
 
 
->>>>>>> main
+//>>>>>>> main*/
 
         System.out.println("Your Nett Tax Payable is R" + taxPayerNetTaxPayable);
 
