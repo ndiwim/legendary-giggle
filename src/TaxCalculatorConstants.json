@@ -28,10 +28,10 @@
         "FIFTH_BAND_PERCENTAGE" : 0.39,
 
         "SIXTH_BAND_LOW" : 782201.00,
-            private static double SIXTH_BAND_HIGH;
-            private static double SIXTH_BAND_PERCENTAGE;
+        "SIXTH_BAND_HIGH" : 1656600.00,
+        "SIXTH_BAND_PERCENTAGE" : 0.41,
 
-            private static double SEVENTH_BAND_LOW;
-            private static double SEVENTH_BAND_HIGH;
-            private static double SEVENTH_BAND_PERCENTAGE;
+        "SEVENTH_BAND_LOW" : 1656601.00,
+        "SEVENTH_BAND_HIGH" : 1000000000.00,
+        "SEVENTH_BAND_PERCENTAGE" : 0.45
 }

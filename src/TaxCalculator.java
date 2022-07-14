@@ -56,7 +56,7 @@ public class TaxCalculator {
         TaxTable t2021_2022 = new TaxTable(TaxPayerNetTaxableIncome);
         NetTaxPayable = t2021_2022.CalculateTaxPayable();
 
-<<<<<<< HEAD
+
         //PrimaryRebate and MedicalCredits accounted for in Tax Table
         //Secondary and Tertiary Rebate not applicable in phase1
         Deduct Medical Credits
@@ -75,11 +75,8 @@ public class TaxCalculator {
             NetTaxPayable -= TertiaryRebate;
         }
 
-=======
+
          */
-
-
-//>>>>>>> main*/
 
         System.out.println("Your Nett Tax Payable is R" + taxPayerNetTaxPayable);
 
